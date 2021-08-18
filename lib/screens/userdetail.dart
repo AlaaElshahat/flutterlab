@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:httpdemo/models/user.dart';
+import 'package:httpdemo/screens/map.dart';
 import 'package:httpdemo/screens/utlitis.dart';
 
 class UserDetail extends StatefulWidget {
@@ -53,6 +54,18 @@ class _UserDetailState extends State<UserDetail> {
           height: 10,
         ),
         Divider(),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: MaterialButton(
+            onPressed:()
+            {
+              pushPage(context, MapSample(userLoaction :widget.user.address.geo));
+            } ,
+             child: Text("Mapview"),
+            
+
+          ),
+        )
       ],
     ));
   }
